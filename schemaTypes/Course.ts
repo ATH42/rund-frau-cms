@@ -2,7 +2,7 @@ import {defineType} from 'sanity'
 
 export default defineType({
   name: 'course',
-  title: 'Kurs',
+  title: 'Kurse',
   type: 'document',
   fields: [
     {
@@ -14,7 +14,7 @@ export default defineType({
     {
       name: 'description',
       title: 'Beschreibung',
-      type: 'string',
+      type: 'text',
       placeholder: 'Geben Sie eine Beschreibung des Kurses ein',
     },
     {
