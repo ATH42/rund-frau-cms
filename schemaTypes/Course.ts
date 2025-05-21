@@ -46,5 +46,18 @@ export default defineType({
       type: 'number',
       placeholder: 'Geben Sie den Kurspreis ein',
     },
+    {
+      name: 'image',
+      title: 'Kurs Foto',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'alt',
+      title: 'Alt Text',
+      type: 'string',
+    },
   ],
 })
