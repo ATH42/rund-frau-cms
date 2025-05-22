@@ -25,8 +25,8 @@ export const structure: StructureResolver = (S) =>
         .id('contact-reasons'),
       S.documentTypeListItem('course').title('Kurse').icon(SparkleIcon),
       S.documentTypeListItem('schedule').title('Veranstaltungen').icon(CalendarIcon),
-      S.documentTypeListItem('services').title('Angebote').icon(StarIcon),
-      S.documentTypeListItem('team-members').title('Team').icon(UsersIcon),
+      S.documentTypeListItem('service').title('Angebote').icon(StarIcon),
+      S.documentTypeListItem('team-member').title('Team').icon(UsersIcon),
       S.documentTypeListItem('room-image').title('Raum Bilder').icon(ImageIcon),
       S.documentTypeListItem('team-image').title('Team Bilder').icon(ImageIcon),
     ])

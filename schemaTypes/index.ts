@@ -3,9 +3,9 @@ import course from './Course'
 import intro from './intro'
 import roomImage from './RoomImage'
 import schedule from './Schedule'
-import services from './Services'
+import service from './Services'
 import teamImage from './TeamImage'
-import teamMembers from './TeamMembers'
+import teamMember from './TeamMembers'
 
 export const schemaTypes = [
   intro,
@@ -13,7 +13,7 @@ export const schemaTypes = [
   course,
   roomImage,
   schedule,
-  services,
+  service,
   teamImage,
-  teamMembers,
+  teamMember,
 ]

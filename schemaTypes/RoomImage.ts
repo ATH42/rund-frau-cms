@@ -4,6 +4,11 @@ export default defineType({
   name: 'room-image',
   title: 'Raum Foto',
   type: 'document',
+  preview: {
+    select: {
+      title: 'description',
+    },
+  },
   fields: [
     {
       name: 'image',
@@ -15,13 +20,7 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'alt',
-      title: 'Alt Text',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'caption',
+      name: 'description',
       title: 'Beschreibung',
       type: 'text',
       placeholder: 'Beschreibung des Bildes (z.B. Raumname)',

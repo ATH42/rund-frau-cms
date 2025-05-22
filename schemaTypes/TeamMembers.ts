@@ -1,9 +1,23 @@
 import {defineType} from 'sanity'
 
 export default defineType({
-  name: 'team-members',
-  title: 'Team Member',
+  name: 'team-member',
+  title: 'Team Members',
   type: 'document',
+  preview: {
+    select: {
+      name: 'name', // This will be used as the title in the list
+      title: 'title',
+      image: 'image',
+    },
+    prepare(selection) {
+      return {
+        title: selection.name, // This sets the name as the title
+        subtitle: selection.title,
+        media: selection.image,
+      }
+    },
+  },
   fields: [
     {
       name: 'name',
@@ -42,6 +56,12 @@ export default defineType({
       name: 'description',
       title: 'Beschreibung',
       type: 'text',
+    },
+    {
+      name: 'sortOrder',
+      title: 'Position',
+      type: 'number',
+      description: 'Niedrigste zuerst',
     },
   ],
 })

@@ -1,7 +1,7 @@
 import {defineType} from 'sanity'
 
 export default defineType({
-  name: 'services',
+  name: 'service',
   title: 'Angebote',
   type: 'document',
   fields: [
@@ -27,10 +27,48 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'paragraphTitle',
-      title: 'Titel des Paragraphen',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
+      name: 'paragraphs',
+      title: 'Paragraphen',
+      type: 'array',
+      of: [
+        {
+          name: 'paragraphItem',
+          title: 'Paragraph',
+          type: 'object',
+
+          fields: [
+            {
+              name: 'paragraphTitle',
+              type: 'string',
+              title: 'Paragraph Titel',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: 'paragraph',
+              type: 'text',
+              title: 'Paragraph Text',
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+          preview: {
+            select: {
+              title: 'paragraphTitle',
+            },
+            prepare({title}) {
+              return {
+                title: title || 'Untitled',
+                media: null,
+              }
+            },
+          },
+        },
+      ],
+    },
+    {
+      name: 'sortOrder',
+      title: 'Position',
+      type: 'number',
+      description: 'Niedrigste zuerst',
     },
   ],
 })
