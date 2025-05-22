@@ -1,0 +1,5 @@
+{
+  "path": "../rund-frau-next/src/**/*.{ts,tsx,js,jsx}",
+  "schema": "./schema.json",
+  "generates": "../rund-frau-next/src/sanity/types.ts"
+}
