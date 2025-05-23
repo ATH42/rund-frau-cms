@@ -12,6 +12,22 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        slugify: (input) =>
+          input
+            .toLowerCase()
+            .replace(/\s+/g, '-')
+            .replace(/[äöüß]/g, (c) => ({ä: 'ae', ö: 'oe', ü: 'ue', ß: 'ss'})[c] || c)
+            .replace(/[^a-z0-9]/g, '')
+            .slice(0, 96),
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'image',
       title: 'Bild zum Angebot',
       type: 'image',
