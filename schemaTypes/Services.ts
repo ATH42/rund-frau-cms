@@ -12,6 +12,18 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Slug',
+      name: 'slug',
+      type: 'slug',
+      description:
+        'Wird automatisch generiert & an die URL-Adresse angefügt, nur neu generieren wenn absolut notwendig',
+      options: {
+        source: 'title',
+        maxLength: 80,
+      },
+      validation: (Rule) => Rule.required().error('Slug is required'),
+    },
+    {
       name: 'image',
       title: 'Bild zum Angebot',
       type: 'image',
