@@ -18,14 +18,19 @@ export default defineType({
       placeholder: 'Geben Sie eine Beschreibung des Kurses ein',
     },
     {
-      name: 'date',
-      title: 'Datum',
-      type: 'datetime',
-      placeholder: 'Wählen Sie Datum und Uhrzeit aus',
-      options: {
-        dateFormat: 'YYYY-MM-DD',
-        timeFormat: 'HH:mm',
-      },
+      name: 'dates',
+      title: 'Termine',
+      type: 'array',
+      of: [
+        {
+          type: 'datetime',
+          options: {
+            dateFormat: 'YYYY-MM-DD',
+            timeFormat: 'HH:mm',
+          },
+        },
+      ],
+      validation: (Rule) => Rule.required().min(1),
     },
 
     {
