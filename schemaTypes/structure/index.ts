@@ -7,6 +7,8 @@ import {
   StarIcon,
   SparkleIcon,
   ImageIcon,
+  BinaryDocumentIcon,
+  BulbOutlineIcon,
 } from '@sanity/icons'
 
 export const structure: StructureResolver = (S) =>
@@ -29,4 +31,6 @@ export const structure: StructureResolver = (S) =>
       S.documentTypeListItem('team-member').title('Team').icon(UsersIcon),
       S.documentTypeListItem('room-image').title('Raum Bilder').icon(ImageIcon),
       S.documentTypeListItem('team-image').title('Team Bilder').icon(ImageIcon),
+      S.documentTypeListItem('downloads').title('Downloads & Links').icon(BinaryDocumentIcon),
+      S.documentTypeListItem('faq').title('FAQ').icon(BulbOutlineIcon),
     ])

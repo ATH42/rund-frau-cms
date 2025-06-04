@@ -2,7 +2,7 @@ import {defineType} from 'sanity'
 
 export default defineType({
   name: 'schedule',
-  title: 'Veranstaltungen',
+  title: 'Veranstaltungen / Aktuelles',
   type: 'document',
   fields: [
     {

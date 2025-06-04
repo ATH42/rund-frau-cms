@@ -6,6 +6,8 @@ import schedule from './Schedule'
 import service from './Services'
 import teamImage from './TeamImage'
 import teamMember from './TeamMembers'
+import downloads from './Downloads'
+import faq from './FAQ'
 
 export const schemaTypes = [
   intro,
@@ -16,4 +18,6 @@ export const schemaTypes = [
   service,
   teamImage,
   teamMember,
+  downloads,
+  faq,
 ]
