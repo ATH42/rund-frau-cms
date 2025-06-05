@@ -12,15 +12,6 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'date',
-      title: 'Veranstaltungsdatum',
-      type: 'date',
-      options: {
-        dateFormat: 'YYYY-MM-DD',
-      },
-      validation: (Rule) => Rule.required(),
-    },
-    {
       name: 'content',
       title: 'Veranstaltungsbeschreibung',
       type: 'text',

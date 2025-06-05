@@ -9,27 +9,77 @@ export default defineType({
       name: 'title',
       title: 'Titel',
       type: 'string',
-      placeholder: 'Geben Sie den Titel des Downloads oder Links ein',
+      placeholder: 'Geben Sie den Titel der Downloads oder Links ein',
     },
     {
-      name: 'description',
-      title: 'Beschreibung',
-      type: 'text',
-      placeholder: 'Geben Sie eine Beschreibung des Downloads oder Links ein',
+      name: 'contacts',
+      title: 'Kontakte',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'contactName',
+              title: 'Name',
+              type: 'string',
+            },
+            {
+              name: 'phoneNumber',
+              title: 'Telefonnummer',
+              type: 'string',
+              description: 'Telefonnummer für Anfragen',
+            },
+          ],
+        },
+      ],
     },
     {
-      name: 'file',
-      title: 'Datei',
-      type: 'file',
-      options: {
-        accept: '.pdf,.doc,.docx,.txt,.odt,.xls,.xlsx,.csv',
-      },
+      name: 'files',
+      title: 'Dateien',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'fileName',
+              title: 'File Name',
+              type: 'string',
+            },
+            {
+              name: 'fileItem',
+              title: 'Datei',
+              type: 'file',
+              options: {
+                accept: '.pdf,.doc,.docx,.txt,.odt,.xls,.xlsx,.csv',
+              },
+            },
+          ],
+        },
+      ],
     },
     {
       name: 'url',
       title: 'URL',
-      type: 'url',
-      placeholder: 'Geben Sie die URL ein, falls es sich um einen Link handelt',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'linkName',
+              title: 'Link Name',
+              type: 'string',
+            },
+            {
+              name: 'urlItem',
+              title: 'URL',
+              type: 'string',
+            },
+          ],
+        },
+      ],
     },
   ],
 })
