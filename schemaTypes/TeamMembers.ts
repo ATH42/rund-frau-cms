@@ -25,6 +25,7 @@ export default defineType({
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
+    {name: 'category', title: 'Kategorie', type: 'string'},
     {
       name: 'title',
       title: 'Titel',
